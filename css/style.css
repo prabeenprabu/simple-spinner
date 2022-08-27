@@ -4,8 +4,71 @@
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --color-grey: #171717;
-    --color-green: #36a35f;
-    --color-light-blue: #d1e4e4;
+    --color-green: #048757;
+    --color-light-blue: #fee0dc;
+    --color-tomato: #f04242;
+}
+
+body {
+    background-color: var(--color-grey);
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner2 {
+    width: 100%;
+    height: 100%;
+    border-top: 5px solid var(--color-green);
+    border-bottom: 5px solid var(--color-tomato);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    /* animation: spinnerAnimate 2s ease-in-out infinite; */
+    animation: spinnerAnimate 2s cubic-bezier(0.5, -0.04, 0.22, 1.16) infinite;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid var(--color-light-blue);
+    position: absolute;
+    z-index: 0;
+}
+
+.footer {
+    background-color: var(--color-green);
+    width: 100%;
+    line-height: 1.5rem;
+    color: var(--color-light-blue);
+    text-align: center;
+    padding: 0.5rem 0;
+    margin: 5rem 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+}
+
+/* -----------------animate key------------------- */
+@keyframes spinnerAnimate {
+    0% {
+        transform: rotateZ(10deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
